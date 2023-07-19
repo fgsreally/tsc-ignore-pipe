@@ -1,0 +1,22 @@
+{
+  "name": "tsc-ignore-pipe",
+  "version": "1.0.0",
+  "description": "ignore error from specified files when using tsc",
+  "bin": {
+    "tip": "index.js",
+    "tsc-ignore-pipe": "index.js"
+  },
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cac": "^6.7.14",
+    "chalk": "^5.3.0",
+    "minimatch": "^9.0.3"
+  }
+}
