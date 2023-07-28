@@ -24,12 +24,12 @@ cli
         });
         if (ignoredTscErrors.length)
           console.log(
-            `${chalk.yellow(ignoredTscErrors.length)} errors have been ignored (excludes ${chalk.grey(excludes.join('  '))})`
+            `[tip] ${chalk.yellow(ignoredTscErrors.length)} errors have been ignored (excludes ${chalk.grey(excludes.join('  '))})`
           );
 
         if (unignoredTscErrors.length) {
           console.log(
-            `${chalk.red(unignoredTscErrors.length)} errors were not ignored`
+            `[tip] ${chalk.red(unignoredTscErrors.length)} errors were not ignored`
           );
           unignoredTscErrors.forEach((error) =>
            console.log(error.rawErrorLines.join("\n"))
@@ -40,10 +40,9 @@ cli
       })
       .then((result) => {
         if (result?.error) {
-          console.log(chalk.red('sth wrong!'))
           process.exit(1);
         }else{
-          console.log(chalk.green('tsc pass~'))
+          console.log(chalk.green('[tip] tsc pass~'))
         }
       })
       .catch((error) => {

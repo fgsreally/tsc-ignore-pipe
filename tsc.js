@@ -1,5 +1,6 @@
 import { partition } from "./utils.js";
 import { minimatch } from "minimatch";
+import {debug} from './utils'
 const tscErrorLineRegExp = /^(.*)\(\d+,\d+\): error (TS\d{4,}):.*$/;
 
 export const parseTscErrors = (tscOutput) => {
@@ -34,8 +35,15 @@ export const partitionTscErrors = ({ tscErrors, globs }) => {
   const [ignoredTscErrors, unignoredTscErrors] = partition(
     tscErrors,
     (tscError) => {
+      debug(`matching file...--${filePath}`)
+
       for (let glob of globs) {
-        if (minimatch(tscError.filePath, glob)) return true;
+        debug(`using glob...--${glob}`)
+
+        if (minimatch(tscError.filePath, glob)) {
+          debug('match!!')
+          return true;
+        }
       }
     }
   );
