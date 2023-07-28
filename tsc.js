@@ -1,6 +1,5 @@
-import { partition } from "./utils.js";
+import { partition,debug} from "./utils.js";
 import { minimatch } from "minimatch";
-import {debug} from './utils'
 const tscErrorLineRegExp = /^(.*)\(\d+,\d+\): error (TS\d{4,}):.*$/;
 
 export const parseTscErrors = (tscOutput) => {
