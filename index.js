@@ -40,6 +40,7 @@ cli
       })
       .then((result) => {
         if (result?.error) {
+          console.log(chalk.red('sth wrong!'))
           process.exit(1);
         }else{
           console.log(chalk.green('tsc pass~'))
