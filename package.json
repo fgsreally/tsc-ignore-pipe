@@ -1,6 +1,6 @@
 {
   "name": "tsc-ignore-pipe",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "packageManager": "pnpm@7.21.0",
 
   "description": "ignore error from specified files when using tsc",

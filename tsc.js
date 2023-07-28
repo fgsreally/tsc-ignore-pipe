@@ -34,7 +34,7 @@ export const partitionTscErrors = ({ tscErrors, globs }) => {
   const [ignoredTscErrors, unignoredTscErrors] = partition(
     tscErrors,
     (tscError) => {
-      debug(`matching file...--${filePath}`)
+      debug(`matching file...--${tscError.filePath}`)
 
       for (let glob of globs) {
         debug(`using glob...--${glob}`)
